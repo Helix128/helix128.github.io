@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LeagueCalc</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css">
+  </head>
+  <body class="has-background-info" onload="updateDamage();">
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        <div class="box has-background-info-dark has-text-white-bis"> <i>LeagueCalc</i></div>
+      </h1>
+      <p class="subtitle">
+      <div class="box has-background-info-dark has-text-white-bis">League of Legends Damage Calculator</div>
+      </p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="box has-background-info-dark has-text-white-bis">
+        <div class="columns"> 
+        <div class="column">
+            Damage
+            <input class="input has-background-dark has-text-info-light" type="text" placeholder="Damage amount" id="damage" value="0">
+
+            Resistance (Armor/Magic Resistance)
+            <input class="input has-background-dark has-text-info-light" type="text" placeholder="Resist value (e.g. 30)" id="resist" value="0"> 
+            Additional % damage reduction
+            <input class="input has-background-dark has-text-info-light" type="text" placeholder="% damage reduction (e.g. 12%)" id="percentReduction" value="0">
+            Flat damage reduction
+            <input class="input has-background-dark has-text-info-light" type="text" placeholder="Flat damage reduction (e.g. 5)" id="flatReduction" value="0">
+          </div>
+          <div class="column">
+            Results:
+            <div id="result" class="box has-background-dark has-text-info-light">0 damage post mitigation.</div>
+            <div id="reductionResult" class="box has-background-dark has-text-info-light">0% total damage reduction.</div>
+            <div id="eHP" class="box has-background-dark has-text-info-light">0% effective HP bonus.</div>
+          </div>
+        
+        </div>
+       
+    </div>
+  </div>
+    <script>
+
+        const damage = document.getElementById("damage");
+        const resist = document.getElementById("resist");
+        const percentReduction = document.getElementById("percentReduction");
+        const flatReduction = document.getElementById("flatReduction");
+        const result = document.getElementById("result");
+        const reductionResult = document.getElementById("reductionResult");
+        const eHP = document.getElementById("eHP");
+ 
+        function isLetter(c) {
+          return c.toLowerCase() != c.toUpperCase();
+        }
+  
+        function calculateDamageValue(damageValue,resistValue,percentReductionValue,flatReductionValue){
+
+          var realDamage = damageValue;
+
+          if(resistValue>=0){
+            realDamage*=(100/(100+resistValue));
+          }
+          else{
+            realDamage*=(2-(100/(100-resistValue)))
+          }
+          realDamage*=(100-(percentReductionValue))/100;
+          realDamage-=flatReductionValue;
+         
+          var damageReduction = (damageValue-realDamage)/damageValue;
+        
+          return realDamage;
+        }
+        function calculateDamageReduction(preMitigationDmg,postMitigationDmg){
+          return (preMitigationDmg-postMitigationDmg)/preMitigationDmg;
+        }
+        function calculateDamageReductionWithResists(resistValue,percentReductionValue,flatReductionValue){
+          var damage = 100;
+          var realDamage = calculateDamageValue(damage,resistValue,percentReductionValue,flatReductionValue);
+          return calculateDamageReduction(damage,realDamage);
+        }
+        function calculateHPBonus(resistValue,percentReductionValue){
+           var damage = 100;
+          var realDamage = calculateDamageValue(damage,resistValue,percentReductionValue,0);
+          return -100+(Math.round((damage/realDamage)*100)/1);
+        }
+
+const updateDamage = function (e){
+ 
+var damageValue = parseFloat(damage.value);
+if(isNaN(damageValue)){
+  damageValue=0;
+}
+var resistValue = parseFloat(resist.value);
+if(isNaN(resistValue)){
+  resistValue=0;
+}
+var percentReductionValue = parseFloat(percentReduction.value);
+if(isNaN(percentReductionValue)){
+  percentReductionValue=0;
+}
+var flatReductionValue = parseFloat(flatReduction.value);
+if(isNaN(flatReductionValue)){
+  flatReductionValue=0;
+}
+var realDamage = calculateDamageValue(damageValue,resistValue,percentReductionValue,flatReductionValue);
+
+if(isNaN(realDamage)){
+  realDamage=0;
+}
+
+var damageReduction = damageValue<=0?calculateDamageReductionWithResists(resistValue,percentReductionValue,flatReductionValue):calculateDamageReduction(damageValue,realDamage);
+if(isNaN(damageReduction)){
+  damageReduction=0;
+}
+var eHPBonus = flatReductionValue<=0?calculateHPBonus(resistValue,percentReductionValue,flatReductionValue):-100+(Math.round((damageValue/realDamage)*100)/1);
+if(isNaN(eHPBonus)){
+  eHPBonus=0;
+}
+reductionResult.innerText =(Math.round(damageReduction*100))+"% total damage reduction."
+eHP.innerText =  eHPBonus+ "% effective HP bonus.";
+result.innerText = Math.round(realDamage*10)/10 + " damage post mitigation.";
+
+}
+
+        damage.addEventListener("input",updateDamage);
+        resist.addEventListener("input",updateDamage);
+        percentReduction.addEventListener("input",updateDamage);
+        flatReduction.addEventListener("input",updateDamage);
+        
+    </script>
+   
+  </section>
+  <br>
+  <br>
+  <div class="container">
+    <div class="box has-background-info-dark has-text-white-bis">
+    LeagueCalc isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.
+  </div>
+  <div class="container">
+    <div class="notification is-info has-text-white-bis">
+     <i>made with love by Helix (v1.0 - 20.11.2023)</i>
+    </div>
+  </div>  
+
+  </section>
+  <br><br><br><br><br>
+  </body>
+
+</html>
