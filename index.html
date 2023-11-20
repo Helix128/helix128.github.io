@@ -1,4 +1,23 @@
-<!DOCTYPE html>
+
+
+<!DOCTYPE html> 
+<style>
+
+    .magnemite {
+        animation: 1s ease-in-out infinite levitate;
+      }
+      
+
+      
+     @keyframes levitate {
+      
+         0% {transform: translateY(0px);}
+         50% {transform: translateY(-20px); transform:rotate(210);} 
+         100% {transform: translateY(0px);}
+      }
+
+
+</style>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -38,13 +57,12 @@
           <p class="subtitle">
         I am a game developer with a few years of experience with C# (especially Unity) and I am currently learning web development (HTML, JS, Java, ASP.NET).
         <br>I have no relevant projects to show for a CV (yet), so this website is mostly just an experiment. Thanks for reading anyways!
-        <br> For this site, I used <a href="https://bulma.io/" class="has-text-primary">Bulma</a> for CSS.
         <br><br>
         I have no prior experience building good user interfaces so... please forgive my <a class="has-text-danger-light"><br>"design choices"</a>. 
     </p>
         </div>
         <div class="column">
-           <img src="./img/Magnemite.png" align="right">
+           <img class="magnemite" src="./img/Magnemite.png" align="right">
         </div>
     </div>
 </div>
