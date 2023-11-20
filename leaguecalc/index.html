@@ -112,7 +112,9 @@ var realDamage = calculateDamageValue(damageValue,resistValue,percentReductionVa
 if(isNaN(realDamage)){
   realDamage=0;
 }
-
+if(realDamage<0){
+  realDamage=0;
+}
 var damageReduction = damageValue<=0?calculateDamageReductionWithResists(resistValue,percentReductionValue,flatReductionValue):calculateDamageReduction(damageValue,realDamage);
 if(isNaN(damageReduction)){
   damageReduction=0;
