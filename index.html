@@ -1,75 +1,197 @@
+<!doctype html>
+<html lang="en">
+
+<head>
 
 
-<!DOCTYPE html> 
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <title>El Big Data</title>
+</head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <style>
+  body {
+    background-color: #fff;
+    /* Color de fondo claro */
+    color: #000;
+    /* Color de texto claro */
+  }
 
-    .magnemite {
-        animation: 1s ease-in-out infinite levitate;
-      }
-      
-
-      
-     @keyframes levitate {
-      
-         0% {transform: translateY(0px);}
-         50% {transform: translateY(-20px); transform:rotate(210);} 
-         100% {transform: translateY(0px);}
-      }
-
-
+  body.dark-mode {
+    background-color: #333;
+    /* Color de fondo oscuro */
+    color: #fff;
+    /* Color de texto oscuro */
+  }
 </style>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Helix | Home</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="shortcut icon" type="image" href="./img/MagnemiteLogo.png" />
-  </head>
-  <body>
- 
-    <section class="hero is-info">
-        <div class="hero-body">
-          <p class="title"> 
-            Helix
-          </p>
-          <p class="subtitle">
-            Game & Web Developer
-          </p>
-          Public projects:
-          <nav class="navbar">
-            <a class="navbar-item" href="https://helix128.github.io/leaguecalc/">
-                <strong>LeagueCalc</strong>
-              </a>
-            
-        </nav>
-        </div>
-        
-      </section>
-      
-      <section class="hero has-background-info-dark is-info is-large">
-        <div class="hero-body">
-            <div class="columns">
+</head>
 
-        <div class="column">
-          <p class="title">
-            About me!
-          </p>
-          <p class="subtitle">
-        I am a game developer with a few years of experience with C# (especially Unity) and I am currently learning web development (HTML, JS, Java, ASP.NET).
-        <br>I have no relevant projects to show for a CV (yet), so this website is mostly just an experiment. Thanks for reading anyways!
-        <br><br>
-        I have no prior experience building good user interfaces so... please forgive my <a class="has-text-danger-light"><br>"design choices"</a>. 
-    </p>
-        </div>
-        <div class="column">
-           <img class="magnemite" src="./img/Magnemite.png" align="right">
-        </div>
-    </div>
-</div>
+<body>
 
-      </section>
+
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+      var t = document.getElementById("tabla");
+      t.classList.toggle("table-dark");
+
+    }
+
+  </script>
+</body>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">¿Qué es el Big Data?</a>
+      <button type="button" class="btn btn-dark" onclick="toggleDarkMode()">Modo Oscuro</button>
+      <button type="button" class="btn btn-info"
+        onclick="window.location.href='https://noseprogramar.cl/index.html'">Volver a noseprogramar.cl</button>
+
+
     </div>
-    
-  </section>
-  </body>
+  </nav>
+
+  <div class="container mt-5">
+    <div class="card" style="background-color: transparent;">
+      <div class="card-body">
+        <h5 class="card-titlet">Big Data</h5>
+        <p class="card-text">El Big Data se refiere al análisis de enormes conjuntos de datos complejos que se generan a
+          gran velocidad y provienen de diversas fuentes. Al procesar estos datos masivos, las organizaciones pueden
+          obtener información valiosa para mejorar la toma de decisiones, descubrir patrones ocultos, predecir
+          tendencias
+          futuras y optimizar procesos de manera significativa.</p>
+        <p> Las tecnologías de Big Data incluyen sistemas de almacenamiento distribuido, como bases de
+          datos (MySQL), herramientas de análisis de datos y técnicas de inteligencia artificial y aprendizaje
+          automático
+          para extraer conocimientos útiles de los datos. El Big Data tiene aplicaciones en una amplia variedad de
+          campos, como la medicina, las finanzas, el marketing, la logística, la investigación científica y muchos más.
+        </p>
+        <p>El análisis de Big Data ayuda a las organizaciones a aprovechar sus datos y utilizarlos para identificar
+          nuevas oportunidades. Eso, a su vez, conduce a movimientos de negocios más inteligentes, operaciones más
+          eficientes, mayores ganancias y clientes más felices.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="text-center">Piensa en una base de datos como esta...</h3>
+
+
+  <div class="container mt-3">
+    <table class="table" id="tabla">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>E-mail</th>
+          <th>Contenido recomendado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Esteban</td>
+          <td>Esparza</td>
+          <td>e.esparza@udd.cl</td>
+          <td>Cris MJ, pirotecnia</td>
+        </tr>
+        <tr>
+          <td>Miguel</td>
+          <td>Devia</td>
+          <td>papimicky@canjes.cl</td>
+          <td>Comida italiana (Pasta)</td>
+        </tr>
+        <tr>
+          <td>Mauricio</td>
+          <td>Paredes</td>
+          <td>m.paredes@eggking.com</td>
+          <td>Gas natural</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <h3 class="text-center">... pero millones de veces más grande!</h3>
+
+  <img src="https://iaarbook.github.io/img/big_data.png" class="mx-auto d-block">
+
+  <div class="container mt-5">
+    <h2 class="text-center fw-bold">Características del Big Data</h2>
+
+    <div class="card mt-4 p-3" style="background-color: transparent;">
+      <h3 class="card-title text-center mb-4">Volumen</h3>
+      <div class="card-body">
+        <p> La cantidad de datos importa. Con big data, tendrá que procesar grandes volúmenes de datos no estructurados
+          de baja densidad. Puede tratarse de datos de valor desconocido, como feeds de datos de Twitter, flujos de
+          clics
+          de una página web o aplicación para móviles, o equipo con sensores. Para algunas organizaciones, esto puede
+          suponer decenas de terabytes de datos. Para otras, incluso cientos de petabytes.</p>
+      </div>
+    </div>
+
+    <div class="card mt-4 p-3" style="background-color: transparent;">
+      <h3 class="card-title text-center mb-4">Velocidad</h3>
+      <div class="card-body">
+        <p>La velocidad es el ritmo al que se reciben los datos y (posiblemente) al que se aplica alguna acción. La
+          mayor velocidad de los datos normalmente se transmite directamente a la memoria, en vez de escribirse en un
+          disco. Algunos productos inteligentes habilitados para Internet funcionan en tiempo real o prácticamente en
+          tiempo real y requieren una evaluación y actuación en tiempo real.</p>
+      </div>
+    </div>
+
+    <div class="card mt-4 p-3" style="background-color: transparent;">
+      <h3 class="card-title text-center mb-4">Variedad</h3>
+      <div class="card-body">
+        <p>La variedad hace referencia a los diversos tipos de datos disponibles. Los datos convencionales eran
+          estructurados y podían organizarse claramente en una base de datos relacional. Con el auge del big data, los
+          datos se presentan en nuevos tipos de datos no estructurados. Los tipos de datos no estructurados y
+          semiestructurados, como el texto, audio o video, requieren un preprocesamiento adicional para poder obtener
+          significado.</p>
+      </div>
+    </div>
+
+    <div class="card mt-4 p-3" style="background-color: transparent;">
+      <h3 class="card-title text-center mb-4">Veracidad</h3>
+      <div class="card-body">
+        <p>La veracidad en el contexto del Big Data se refiere a la confiabilidad y precisión de los datos recopilados y
+          analizados. Este aspecto se centra en asegurar que los datos sean precisos, completos y estén libres de
+          errores o sesgos. Para garantizar la veracidad de los datos en el Big Data, se utilizan técnicas como la
+          limpieza de datos, la verificación de la fuente, la validación cruzada y el monitoreo continuo de la calidad
+          de los datos.</p>
+      </div>
+
+    </div>
+    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/M26iIqmqWkI?si=mkmaNcWmdhNIxwm0"
+      title="YouTube video player" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+  <style>
+    .card {
+      margin-bottom: 20px;
+      transition: all 0.15s;
+    }
+
+    .card:hover {
+      box-shadow: 0px 0px 39px rgba(125, 125, 125, .25);
+      transform: scale(1.03, 1.03)
+    }
+
+    .card:active {
+      box-shadow: 0px 0px 12px rgba(125, 125, 125, 1.0);
+      transform: scale(1.005, 1.005)
+    }
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+</body>
+
+
 </html>
