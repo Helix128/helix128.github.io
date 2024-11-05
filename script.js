@@ -39,16 +39,19 @@ gsap.from(".btn", {
 gsap.utils.toArray('.section').forEach(section => {
     gsap.from(section, {
         opacity: 0,
-        y: 50,
+        y: 20,
         duration: 1,
         ease: "power2.out",
         scrollTrigger: {
             trigger: section,
-            start: "top 80%",
+            start: "top 992%",
             toggleActions: "play none none reverse"
         }
     });
 });
+
+
+
 
 const swiper = new Swiper('.swiper-container', {
     loop: true,
@@ -82,20 +85,20 @@ const portfolioSlider = document.getElementById('portfolio-slider');
 const portfolioProjects = [
     {
         image: 'https://www.instructure.com/sites/default/files/image/2021-12/Canvas_logo_single_mark.png',
-        title: 'CanvasDownloader',
-        description: '¡Descarga fácilmente tus archivos de Canvas!',
+        title: 'Canvas Downloader',
+        description: '¡Quickly download your Canvas files!',
         link: 'https://github.com/Helix128/CanvasDownloader'
     },
     {
         image: 'https://pngimg.com/d/question_mark_PNG134.png',
         title: '???',
-        description: 'Proximamente.',
+        description: '...',
         link: '#'
     },
     {
         image: 'https://pngimg.com/d/question_mark_PNG134.png',
         title: '???',
-        description: 'Proximamente.',
+        description: '...',
         link: '#'
     }
 ];
