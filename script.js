@@ -1,7 +1,8 @@
+
 // Variables para configurar la onda
 let angle = 0; // Ángulo por defecto
 const waveSpeed = 0.001; // Velocidad de la onda
-const waveAmplitude = 122; // Amplitud de la onda
+const waveAmplitude = 512; // Amplitud de la onda
 const waveFrequency = 0.002; // Frecuencia de la onda
 
 const canvas = document.getElementById('sine-wave');
@@ -11,7 +12,6 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 let time = 0;
-
 function drawWave() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -24,7 +24,7 @@ function drawWave() {
     ctx.lineTo(x, y);
   }
   ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
-  ctx.lineWidth = 4;
+  ctx.lineWidth = 2;
   ctx.stroke();
 
   ctx.restore();
@@ -33,11 +33,31 @@ function drawWave() {
 
   requestAnimationFrame(drawWave);
 }
-drawWave();
+function drawWaveBack() {
+  ctx.save();
+  ctx.translate( canvas.width/2.0, canvas.height/2.0);
+  ctx.rotate(angle * Math.PI / 180);
+  ctx.beginPath();
+  for (let x = -canvas.height; x < canvas.height; x++) {
+    const y = Math.sin((x * waveFrequency*2) + time) * waveAmplitude/2.0;
+    ctx.lineTo(x, y);
+  }
+  ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
+  ctx.lineWidth = 2;
+  ctx.stroke();
 
+  ctx.restore();
+
+  time += waveSpeed;
+
+  requestAnimationFrame(drawWaveBack);
+}
+drawWave();
+drawWaveBack();
 // Animación de estrellas
 const starsContainer = document.getElementById('stars');
 function createStar() {
+  
   const star = document.createElement('div');
   star.className = 'star';
   const size = Math.random() * 3 + 2;
@@ -48,15 +68,16 @@ function createStar() {
   star.style.height = `${size}px`;
   star.style.left = `${x}px`;
   star.style.top = `${y}px`;
-  star.style.opacity = Math.random();
 
   starsContainer.appendChild(star);
 
   setTimeout(() => star.remove(), 2000); // Explosión en 2 segundos
+star.innerHTML = '<i class="fa-solid fa-bolt"></i>';
+star.style.color = 'white';
 }
 
 // Generar estrellas continuamente
-setInterval(createStar, 300);
+//setInterval(createStar, 300);
 
 // Agregar estilos dinámicos para estrellas
 const style = document.createElement('style');
@@ -64,21 +85,24 @@ style.innerHTML = `
   .star {
     position: absolute;
     border-radius: 50%;
-    background: white;
     animation: explode 2s ease-out forwards;
   }
   @keyframes explode {
     0% {
       transform: scale(1);
-      opacity: 1;
+      opacity: 0.0;
     }
-    50% {
-      transform: scale(1.5);
-      opacity: 0.7;
+    50%{
+    transform: scale(0.8);
+      opacity: 0.02;
+    }
+    90% {
+      transform: scale(1.2);
+      opacity: 0.15;
     }
     100% {
       transform: scale(0);
-      opacity: 0;
+      opacity: 1.0;
     }
   }
 `;
@@ -247,4 +271,3 @@ gsap.utils.toArray('.section').forEach(section => {
       });
     });
   });
-  
