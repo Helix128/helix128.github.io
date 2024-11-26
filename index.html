@@ -1,115 +1,70 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Helix</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>helix -> home</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+  <!-- Parallax Container -->
+  <div class="parallax-container">
+    <!-- Fondo Animado -->
+    <canvas id="sine-wave"></canvas>
+    <div id="stars"></div>
 
-    <header class="header">
-        <nav class="nav">
-            <div class="logo">Helix</div>
-            <ul class="nav-links">
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Projects</a></li>
-            </ul>
-            <div class="hamburger">
-                <i class="fas fa-bars"></i>
-            </div>
-        </nav>
-    </header>
+    <!-- Contenido Principal -->
+    <div class="content hero-content">
+      <h1>helix @ tech </h1>
+    </div>
+</div>
 
-    <section id="hero" class="hero">
-        <div class="hero-content">
-            <h1>Helix</h1>
-            <p>Yet another .NET dev...</p>
- 
-            <a href="#about" class="btn">See more!</a>
+  <!-- Sección Sobre Mí -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2><i>about me</i></h2>
+      <p>
+    i am currently studying <b><i>computer science</i></b>, focusing on <b><i>coding</i></b>, <b><i>networks</i></b>, and <b><i>security</i></b>.<br>
+    i am also a <b><i>.NET developer</i></b>, with experience in <b><i>C#</i></b> for apps and games<br>
+    other languages i am learning are <b><i>python</i></b> for data science/ml, <b><i>javascript</i></b> for web dev, and <b><i>c++</i></b> for systems programming
+      </p>
+    </div>
+  </section>
+
+  <!-- Sección Proyectos -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2><i>projects</i></h2>
+      <!-- <div class="project-list">
+        <div class="project">
+          <h3>todo</h3>
+          <p>todo description</p>
         </div>
-        <div class="parallax-bg" data-rellax-speed="-3"></div>
-    </section>
-    <section id="about" class="about section">
-        <h2>About me!</h2>
-        <div class="about-content">
-            <div class="about-text has-text-black">
-                <div class="skills-container">
-                    <p class="intro-text">Developer with experience in the following technologies:</p>
-                    <div class="skills-grid">
-                        <div class="skill-category">
-                            <h3><i class="fab fa-microsoft"></i> .NET</h3>
-                            <ul>
-                                <li>Desktop and mobile applications</li>
-                                <li>Game development (Unity, Godot)</li>
-                            </ul>
-                        </div>
-                        <div class="skill-category"></div>
-                            <h3><i class="fas fa-globe"></i> Web</h3>
-                            <ul>
-                                <li>Frontend development with JavaScript, HTML, CSS</li>
-                                <li>Backend development with PHP and MySQL</li>
-                            </ul>
-                        </div>
-                        <div class="skill-category">
-                            <h3><i class="fas fa-code"></i> C/C++</h3>
-                            <ul>
-                                <li>Game and application development with Raylib</li>
-                            </ul>
-                        </div>
-                        <div class="skill-category">
-                            <h3><i class="fab fa-python"></i> Python</h3>
-                            <ul>
-                                <li>Script development and automation</li>
-                                <li>Data science with Pandas and Matplotlib</li>
-                                <li>Web development with Django</li>
-                                <li>Game development with Pygame</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-image" data-rellax-speed="2" style="text-align: right;">
-                    <img src="https://www.dustloop.com/wiki/images/thumb/b/b2/GGST_Potemkin_5K.png/759px-GGST_Potemkin_5K.png?20220611035211" alt="About Me">
-                    <p class="character-name" style="color: #333;">My main in Guilty Gear -STRIVE- (Potemkin)</p>
-                </div>
-            </div>
-      
+        <div class="project">
+          <h3>todo</h3>
+          <p>todo description</p>
         </div>
-    </section>
-    <section id="portfolio" class="portfolio section">
-        <h2>Projects</h2>
+      </div> -->
+      todo...
+    </div>
+  </section>
 
+  <!-- Sección Contacto -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2><i>contact me</i></h2>
+    <p>you can reach me on discord <br> <i class="fab fa-discord"></i> helix128 </i></p>
 
-        <div class="swiper-container">
-            <div class="swiper-wrapper" id="portfolio-slider">
-            </div>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-prev">
-                <i class="fas fa-chevron-left"></i>
-            </div>
-            <div class="swiper-button-next">
-                <i class="fas fa-chevron-right"></i>
-            </div>
+    </div>
+    <br><br>
+  </section>
 
-        
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="social-links">
-            <a href="https://github.com/Helix128"><i class="fab fa-github"></i></a>
-        </div>
-        <p>&copy; 2024 Helix.</p>
-    </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="script.js"></script>
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  <script src="header.js"></script>
 </body>
 </html>
