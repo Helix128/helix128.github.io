@@ -3,68 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>helix -> home</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Helix | Inicio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
-  <!-- Parallax Container -->
-  <div class="parallax-container">
-    <!-- Fondo Animado -->
-    <canvas id="sine-wave"></canvas>
-    <div id="stars"></div>
+  <div id="canvasParent"></div>
+  <h1><header class="introFade">helix studio @ tech</header> </h1>
 
-    <!-- Contenido Principal -->
-    <div class="content hero-content">
-      <h1>helix studio @ tech </h1>
+  <div class="introFade">
+    
+  <section id="acerca-de">
+    <h1 class="heading">Sobre mí -> Diego Muñoz</h1>
+    <p>
+      <i class="fas fa-graduation-cap"></i> Actualmente estudio <strong>Ingeniería en Informática e Innovación Tecnológica</strong> en la <strong>Universidad del Desarrollo</strong> (sede Concepción), enfocándome en <strong>programación</strong>, <strong>redes</strong> y <strong>seguridad</strong>. 
+    </p>
+    <p>
+      <i class="fas fa-code"></i> Soy desarrollador <strong>.NET</strong>, con experiencia en <strong>C#</strong> para aplicaciones, servicios y juegos.
+    </p>
+    <p>
+      <i class="fas fa-language"></i> Otros lenguajes que manejo incluyen <strong>Python</strong> para <strong>ciencia de datos/ML</strong>, <strong>JavaScript</strong> para <strong>desarrollo web</strong> y <strong>C++</strong> para <strong>programación de sistemas</strong>.
+    </p>
+  </section>
+  <section id="proyectos">
+    <h1 class="heading">Experiencias vigentes</h1>
+    <div class="grid-container">
+      <div class="grid-item">
+        <h2><i class="fas fa-briefcase"></i> CIO de StudyO</h2>
+        <p>Una startup dedicada al desarrollo de una plataforma de apoyo para la planificación de estudios.</p>
+      </div>
+      <div class="grid-item">
+        <h2><i class="fas fa-flask"></i> Ayudante en el Laboratorio C+</h2>
+        <p>Universidad del Desarrollo, Concepción.</p>
+      </div>
     </div>
+  </section>
+  <section id="apps">
+    <h1 class="heading">Mis Apps</h1>
+    <div class="grid-container">
+      <div class="grid-item" onclick="location.href='';">
+        <h2>Proximamente...</h2>
+            </div>
+            <div class="grid-item" onclick="location.href='';">
+              <h2>Proximamente...</h2>
+            </div>
+            <div class="grid-item" onclick="location.href='';">
+              <h2>Proximamente...</h2>
+            </div>
+    </div> 
+  </section>
 </div>
-
-  <!-- Sección Sobre Mí -->
-  <section id="about" class="section">
-    <div class="container">
-      <h2><i>about me</i></h2>
-      <p>
-    i am currently studying <b><i>computer science</i></b>, focusing on <b><i>coding</i></b>, <b><i>networks</i></b>, and <b><i>security</i></b>.<br>
-    i am also a <b><i>.NET developer</i></b>, with experience in <b><i>C#</i></b> for apps and games<br>
-    other languages i am learning are <b><i>python</i></b> for data science/ml, <b><i>javascript</i></b> for web dev, and <b><i>c++</i></b> for systems programming
-      </p>
-    </div>
-  </section>
-
-  <!-- Sección Proyectos -->
-  <section id="projects" class="section">
-    <div class="container">
-      <h2><i>projects</i></h2>
-      <!-- <div class="project-list">
-        <div class="project">
-          <h3>todo</h3>
-          <p>todo description</p>
-        </div>
-        <div class="project">
-          <h3>todo</h3>
-          <p>todo description</p>
-        </div>
-      </div> -->
-      todo...
-    </div>
-  </section>
-
-  <!-- Sección Contacto -->
-  <section id="contact" class="section">
-    <div class="container">
-      <h2><i>contact me</i></h2>
-    <p>you can reach me on discord <br> <i class="fab fa-discord"></i> helix128 </i></p>
-
-    </div>
-    <br><br>
-  </section>
-
-  <!-- Scripts -->
   <script src="script.js"></script>
-  <script src="header.js"></script>
 </body>
 </html>
