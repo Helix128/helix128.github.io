@@ -144,11 +144,11 @@ canvas {
   border-radius: 10px;
   cursor: pointer;
   color: white;
-  transition: transform 0.5s, background 0.2s,color 0.2s;
+  transition: transform 0.2s, background 0.2s,color 0.2s;
 }
 
 .grid-item:hover {
-  transform: scale(1.05);
+  transform: scale(1.025);
   background: rgba(255, 255,255 , 0.9);
   color: black;
 }
@@ -158,7 +158,7 @@ canvas {
 }
 
 .grid-item.locked:hover {
-  transform: scale(1.05);
+  transform: scale(1.025);
   background: rgba(0, 0, 0, 0.5);
   color: white;
 }
